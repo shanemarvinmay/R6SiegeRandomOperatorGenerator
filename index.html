@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R6S Op Gen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <h1 style="color:whitesmoke">R6S Random Operator Generator!</h1>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <div class="card text-bg-dark">
+                    <img id="atk-pp" src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1GUGTgi7diwlJlK2bQuD7d/8a1507a205db1a7416ec58881e43f8bf/r6-heroBanner.jpg" 
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h2 id="atk-name" class="card-title">Attacking Operator</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark">
+                    <img id="def-pp" src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2023/02/rainbow-six-siege-year-8-update-reload.jpg"
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h2 id="def-name" class="card-title">Defending Operator</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+        <script>
+            const attackers = ['Ash', 'Blackbeard', 'Blitz', 'Buck', 'Capitão', 'Dokkaebi', 'Finka', 'Fuze', 'Glaz', 'Gridlock', 'Hibana', 'Iana', 'IQ', 'Jackal', 'Kali', 'Lion', 'Maverick', 'Montagne', 'Nomad', 'Nøkk', 'Sledge', 'Thatcher', 'Thermite', 'Twitch', 'Ying', 'Zofia', 'Amaru', 'Flores', 'Aruni'];
+            const defenders = ['Alibi', 'Aruni', 'Bandit', 'Castle', 'Caveira', 'Clash', 'Doc', 'Echo', 'Ela', 'Frost', 'Goyo', 'Jäger', 'Kapkan', 'Kaid', 'Lesion', 'Maestro', 'Melusi', 'Mira', 'Mute', 'Oryx', 'Pulse', 'Rook', 'Smoke', 'Tachanka', 'Valkyrie', 'Vigil', 'Wamai', 'Måne', 'Thunderbird'];
+            const getRandomInt = (max) => Math.floor(Math.random() * max);
+            const attacker = attackers[getRandomInt(attackers.length)];
+            const defender = defenders[getRandomInt(defenders.length)];
+            document.querySelector('#atk-name').innerText = attacker;
+            document.querySelector('#def-name').innerText = defender;
+            document.querySelector('#atk-pp').src = `img/r6-operators-list-${attacker.toLowerCase()}.webp`;
+            document.querySelector('#def-pp').src = `img/r6-operators-list-${defender.toLowerCase()}.webp`;
+        </script>
+</body>
+
+</html>
